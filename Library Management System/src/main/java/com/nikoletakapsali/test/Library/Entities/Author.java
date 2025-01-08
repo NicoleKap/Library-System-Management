@@ -1,5 +1,7 @@
 package com.nikoletakapsali.test.day10_library.Entities;
 
+//In this class we have the entity Author with its attributes
+
 public class Author {
     private String id;
     private String firstName;
