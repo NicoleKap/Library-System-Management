@@ -1,7 +1,10 @@
-package com.nikoletakapsali.test.day10_library.Entities;
+package com.nikoletakapsali.test.Library.Entities;
+
 
 import java.util.ArrayList;
 import java.util.List;
+
+//In this class we have the entity Book with its attributes
 
 public class Book {
     private int id;

@@ -1,8 +1,8 @@
-package com.nikoletakapsali.test.day10_library.Services;
+package com.nikoletakapsali.test.Library.Services;
 
-import com.nikoletakapsali.test.day10_library.Entities.Author;
-import com.nikoletakapsali.test.day10_library.Entities.Book;
-import com.nikoletakapsali.test.day10_library.Entities.Theme;
+import com.nikoletakapsali.test.Library.Entities.Author;
+import com.nikoletakapsali.test.Library.Entities.Book;
+import com.nikoletakapsali.test.Library.Entities.Theme;
 
 import java.util.ArrayList;
 import java.util.List;

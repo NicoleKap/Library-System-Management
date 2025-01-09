@@ -1,4 +1,6 @@
-package com.nikoletakapsali.test.day10_library.Entities;
+package com.nikoletakapsali.test.Library.Entities;
+
+//In this class we have the entity Theme with its attributes
 
 public class Theme {
 

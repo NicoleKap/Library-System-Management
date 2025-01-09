@@ -1,6 +1,6 @@
-package com.nikoletakapsali.test.day10_library.Services;
+package com.nikoletakapsali.test.Library.Services;
 
-import com.nikoletakapsali.test.day10_library.Entities.Theme;
+import com.nikoletakapsali.test.Library.Entities.Theme;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,6 @@ public class ThemeServices {
     //removes a theme from the list
     public void RemoveTheme(Integer id) {
         themes.removeIf(theme -> theme.getId() == id);
-        System.out.println("The theme has been removed successfully");
     }
 
     public void UpdateTheme(int id, String new_name, String new_description) {
