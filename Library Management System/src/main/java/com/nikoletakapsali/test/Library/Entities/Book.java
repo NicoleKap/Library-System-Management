@@ -14,7 +14,7 @@ public class Book {
     private int publishedYear;
     private String description;
     private String themes;
-
+    private boolean rented;
    
 
 	public Book(int id, String title,String author, String publisher, int publishedYear, String description,
@@ -26,8 +26,8 @@ public class Book {
 		this.publishedYear = publishedYear;
 		this.description = description;
 		this.themes = themes;
+		this.rented = false;
 	}
-
 
 	public int getId() {
         return id;
@@ -80,8 +80,16 @@ public class Book {
     public String getThemes() {
         return themes;
     }
+    
+    public boolean isRented() {
+		return rented;
+	}
 
-    public void setThemes(String newThemes) {
+	public void setRented(boolean rented) {
+		this.rented = rented;
+	}
+
+	public void setThemes(String newThemes) {
         this.themes = newThemes;
     }
 
