@@ -3,13 +3,6 @@ package com.nikoletakapsali.test.Library;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.nikoletakapsali.test.Library.Entities.Book;
-import com.nikoletakapsali.test.Library.Entities.Rent;
-import com.nikoletakapsali.test.Library.Entities.Theme;
-import com.nikoletakapsali.test.Library.Entities.User;
-import com.nikoletakapsali.test.Library.Services.RentService;
-import com.nikoletakapsali.test.Library.Services.ThemeServices;
-
 @SpringBootApplication
 public class LibraryApplication {
 
