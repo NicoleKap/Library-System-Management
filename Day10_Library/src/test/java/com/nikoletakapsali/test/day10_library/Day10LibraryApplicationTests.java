@@ -8,6 +8,10 @@ class Day10LibraryApplicationTests {
 
     @Test
     void contextLoads() {
+    	
+    	
+    	
     }
+    
 
 }

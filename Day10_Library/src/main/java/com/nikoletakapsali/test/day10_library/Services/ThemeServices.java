@@ -10,21 +10,25 @@ public class ThemeServices {
     private List<Theme> themes = new ArrayList<Theme>();
 
     //adds a new theme to my list
-    public void AddTheme(Theme theme) {
+    public List<Theme> AddTheme(Theme theme) {
         themes.add(theme);
+        return themes;
     }
 
     //removes a theme from the list
-    public void RemoveTheme(Theme theme) {
-        themes.remove(theme);
+    public void RemoveTheme(Integer id) {
+        themes.removeIf(theme -> theme.getId() == id);
     }
 
-    public void UpdateTheme(Theme theme) {
-
+    public void UpdateTheme(int id, String new_name, String new_description) {
         for (int i = 0; i < themes.size(); i++) {
-            if (themes.get(i).equals(theme)) {
-                themes.set(i, theme);
-                break;
+            for(Theme theme : themes) {
+            	if (theme.getId() == id) {
+            		if (new_name != null)
+            			theme.setName(new_name);
+            		if (new_description != null)
+            			theme.setDescription(new_description);
+            	}
             }
         }
 

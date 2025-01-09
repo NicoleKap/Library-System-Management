@@ -1,23 +1,23 @@
 package com.nikoletakapsali.test.day10_library.Entities;
 
 public class Author {
-    private String id;
+    private int id;
     private String firstName;
     private String lastName;
     private String dateOfBirth;
 
-    public Author(String id, String firstName, String lastName, String dateOfBirth) {
+    public Author(int id, String firstName, String lastName, String dateOfBirth) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -44,4 +44,7 @@ public class Author {
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+    
+  
+    
 }

@@ -1,7 +1,10 @@
 package com.nikoletakapsali.test.day10_library.Entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Book {
-    private String id;
+    private int id;
     private String title;
     private String author;
     private String publisher;
@@ -9,11 +12,25 @@ public class Book {
     private String description;
     private String themes;
 
-    public String getId() {
+   
+
+	public Book(int id, String title,String author, String publisher, int publishedYear, String description,
+			String themes) {
+		this.id = id;
+		this.title = title;
+		this.author = author;
+		this.publisher = publisher;
+		this.publishedYear = publishedYear;
+		this.description = description;
+		this.themes = themes;
+	}
+
+
+	public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -29,8 +46,8 @@ public class Book {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthor(String newAuthor) {
+        this.author = newAuthor;
     }
 
     public String getPublisher() {
@@ -61,10 +78,11 @@ public class Book {
         return themes;
     }
 
-    public void setThemes(String themes) {
-        this.themes = themes;
+    public void setThemes(String newThemes) {
+        this.themes = newThemes;
     }
 
+  
 
 
 }
