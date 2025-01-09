@@ -5,6 +5,9 @@ import com.nikoletakapsali.test.Library.Entities.Theme;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ThemeServices {
 
     private List<Theme> themes = new ArrayList<Theme>();

@@ -7,7 +7,16 @@ import com.nikoletakapsali.test.Library.Entities.Theme;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service 
 public class BookServices {
+	
+	@Autowired
+	AuthorServices  authorServices;
+	@Autowired
+	ThemeServices themeService;
 
     private List<Book> bookList = new ArrayList<Book>();
 
