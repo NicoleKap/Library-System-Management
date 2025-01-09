@@ -9,7 +9,16 @@ public class ThemeServices {
 
     private List<Theme> themes = new ArrayList<Theme>();
 
-    //adds a new theme to my list
+    
+    public List<Theme> getThemes() {
+		return themes;
+	}
+
+	public void setThemes(List<Theme> themes) {
+		this.themes = themes;
+	}
+
+	//adds a new theme to my list
     public List<Theme> AddTheme(Theme theme) {
         themes.add(theme);
         return themes;
