@@ -6,14 +6,28 @@ import java.util.List;
 import com.teomaik.demospring.authors.Author;
 import com.teomaik.demospring.themes.Theme;
 
+import jakarta.persistence.Column;
+
 public class Book {
 
+	@Column (name = "book_id", nullable = false)
 	private Integer id;
+	
+	@Column (name = "title", nullable = false)
 	private String title;
+	
+	@Column (name = "author", nullable = true)
 	private Author author;
+	
+	@Column (name = "publisher", nullable = true)
 	private String publiser;
+	
+	@Column (name = "publishYear", nullable = true)
 	private int publishYear;
+	
+	@Column (name = "description", nullable = true)
 	private String description;
+	
 	List<Theme> themes = new ArrayList<Theme>();
 
 	public Book(Integer id, String title, Author author, String publiser, int publishYear, String description,

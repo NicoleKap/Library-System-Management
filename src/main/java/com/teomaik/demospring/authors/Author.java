@@ -1,10 +1,19 @@
 package com.teomaik.demospring.authors;
 
+import jakarta.persistence.Column;
+
 public class Author {
 
+	@Column(name = "author_id", nullable = false)
     private Integer id;
+	
+	@Column(name = "name", nullable = false)
 	private String fisrtName;
+	
+	@Column(name = "lastName", nullable = false)
 	private String lastName;
+	
+	@Column(name = "dateOfBirth", nullable = true) 
 	private String dateOfBirth;
 	
 	public Author(Integer id, String fisrtName, String lastName, String dateOfBirth) {
