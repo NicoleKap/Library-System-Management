@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.teomaik.demospring.Repositories.BookRepository;
 import com.teomaik.demospring.authors.Author;
 import com.teomaik.demospring.authors.AuthorServices;
 import com.teomaik.demospring.themes.Theme;
@@ -20,27 +21,28 @@ public class BookServices {
 	AuthorServices authorServices;
 	@Autowired
 	ThemeServices themeServices;
-
-	List<Book> books = new ArrayList<Book>();
-
+	@Autowired
+	BookRepository repository;
+	
+	
 	public List<Book> getAllBooks() {
-		return books;
+		return repository.findAll();
 	}
 
 	public List<Book> addBook(Book book) {
 		book.setAuthor(null); // Για να μην εχουμε author που δεν υπαρχει στη ΒΔ
-		books.add(book); //Μπορώ να δημιουργήσω μέθοδο που να ελέγχει αν υπάρχει ο author στην ΒΔ και αν δεν υπάρχει προσθέτει		
-		return books;
+		getAllBooks().add(book); //Μπορώ να δημιουργήσω μέθοδο που να ελέγχει αν υπάρχει ο author στην ΒΔ και αν δεν υπάρχει προσθέτει		
+		return getAllBooks();
 	} 
 
 	public List<Book> removeBook(Integer id) {
-		books.removeIf(book -> book.getId() == id);
-		return books;
+		getAllBooks().removeIf(book -> book.getId() == id);
+		return getAllBooks();
 	}
 
 	public List<Book> updateBook(int id, String title, Author author, String publiser, int publishYear,
 			String description, List<Theme> theme) {
-		for (Book book : books) {
+		for (Book book : getAllBooks()) {
 			if (book.getId() == id) {
 				if (title != null)
 					book.setTitle(title);
@@ -54,14 +56,14 @@ public class BookServices {
 					book.setDescription(description);
 				if (theme != null)
 					book.setTheme(theme);
-				return books;
+				return getAllBooks();
 			}
 		}
 		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Course with id " + id + " dosnt exist");
 	}
 
     public List<Book> addTheme(Integer bookId, Integer themeId){
-        for(Book book :books) {
+        for(Book book : getAllBooks()) {
             if (book.getId() == bookId){
                 for(Theme theme: themeServices.getAllThemes()){
                     if (theme.getId() == themeId){
@@ -70,7 +72,7 @@ public class BookServices {
                 }
             }
         }
-        return books;
+        return getAllBooks();
     }
 
 }
