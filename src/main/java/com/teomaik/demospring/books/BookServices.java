@@ -28,9 +28,10 @@ public class BookServices {
 	}
 
 	public List<Book> addBook(Book book) {
-		books.add(book);
+		book.setAuthor(null); // Για να μην εχουμε author που δεν υπαρχει στη ΒΔ
+		books.add(book); //Μπορώ να δημιουργήσω μέθοδο που να ελέγχει αν υπάρχει ο author στην ΒΔ και αν δεν υπάρχει προσθέτει		
 		return books;
-	}
+	} 
 
 	public List<Book> removeBook(Integer id) {
 		books.removeIf(book -> book.getId() == id);
